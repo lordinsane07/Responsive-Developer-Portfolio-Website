@@ -204,6 +204,8 @@ export default function Skills() {
                             style={{
                                 display: "flex",
                                 alignItems: "center",
+                                justifyContent: "center",
+                                minWidth: 140,
                                 gap: "0.75rem",
                                 padding: "0.8rem 1.5rem",
                                 borderRadius: 12,

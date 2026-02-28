@@ -43,11 +43,17 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <div className="section-divider" />
         <About />
+        <div className="section-divider" />
         <Skills />
+        <div className="section-divider" />
         <Experience />
+        <div className="section-divider" />
         <Projects />
+        <div className="section-divider" />
         <Certifications />
+        <div className="section-divider" />
         <Contact />
       </main>
       <Footer />

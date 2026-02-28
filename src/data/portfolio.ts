@@ -77,8 +77,8 @@ export const socialLinks = [
 
 export const stats = [
   { label: "Projects Built", value: 7, suffix: "+" },
-  { label: "LeetCode Rank", value: 25, suffix: "% Top", prefix: "Top " },
-  { label: "TryHackMe", value: 7, suffix: "% Top", prefix: "Top " },
+  { label: "LeetCode Rank", value: 25, suffix: "%", prefix: "Top " },
+  { label: "TryHackMe", value: 7, suffix: "%", prefix: "Top " },
   { label: "CGPA", value: 8.05, suffix: "/10", decimals: 2 },
 ];
 

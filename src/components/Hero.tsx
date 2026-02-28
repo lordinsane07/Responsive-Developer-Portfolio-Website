@@ -120,7 +120,7 @@ export default function Hero() {
                 {/* Name - character by character */}
                 <h1
                     style={{
-                        fontSize: "clamp(2.5rem, 8vw, 5.5rem)",
+                        fontSize: "clamp(2rem, 8vw, 5.5rem)", // Reduced min size for mobile
                         fontFamily: "Syne, sans-serif",
                         fontWeight: 800,
                         lineHeight: 1,
@@ -193,7 +193,7 @@ export default function Hero() {
                     style={{
                         display: "flex",
                         justifyContent: "center",
-                        gap: "0.75rem",
+                        gap: "1rem", // Increased gap from 0.75rem for touch targets
                         marginBottom: "3rem",
                         flexWrap: "wrap",
                     }}
