@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mrittick Deb — Portfolio Website
 
-## Getting Started
+A world-class animated personal portfolio built with **Next.js 14**, **Three.js**, **Framer Motion**, and the **Aurora** color system.
 
-First, run the development server:
+## ✨ Features
+
+- **Three.js Aurora Particle Hero** — 600-particle constellation with mouse-reactive parallax and cyan/violet color interpolation
+- **Framer Motion Animations** — Scroll-triggered reveals, staggered entrances, typewriter effect, character-by-character name animation
+- **Dark/Light Mode Toggle** — Smooth transitions with Aurora color system
+- **Custom Animated Cursor** — Dot + ring that reacts to hoverable elements
+- **Glassmorphic Navbar** — Transparent → blurred glass on scroll with active section highlighting
+- **Bento Grid Projects** — Featured projects get larger cards with GitHub + Live Demo buttons
+- **Lenis Smooth Scroll** — Butter-smooth scrolling experience
+- **Fully Responsive** — Mobile, tablet, and desktop
+- **SEO Optimized** — Proper meta tags, semantic HTML, Open Graph
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 14 (App Router) + TypeScript |
+| Styling | Tailwind CSS + Custom CSS |
+| 3D/WebGL | Three.js via @react-three/fiber + @react-three/drei |
+| Animations | Framer Motion |
+| Smooth Scroll | Lenis |
+| Icons | Lucide React + React Icons |
+| Fonts | Syne + Plus Jakarta Sans (Google Fonts) |
+
+## 🚀 Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with fonts & metadata
+│   ├── page.tsx            # Main page with Lenis smooth scroll
+│   └── globals.css         # Aurora color system & utilities
+├── components/
+│   ├── ThreeBackground.tsx # Three.js aurora particle field
+│   ├── CustomCursor.tsx    # Animated cursor
+│   ├── Navbar.tsx          # Glassmorphic sticky navbar
+│   ├── Hero.tsx            # Full-viewport hero section
+│   ├── About.tsx           # Bio + avatar + stat cards
+│   ├── Skills.tsx          # Categorized skill pills
+│   ├── Experience.tsx      # Animated timeline
+│   ├── Projects.tsx        # Bento grid project cards
+│   ├── Certifications.tsx  # Achievements & education
+│   ├── Contact.tsx         # Contact form + info
+│   └── Footer.tsx          # Minimal footer
+└── data/
+    └── portfolio.ts        # All content — edit this file to update
+```
 
-## Learn More
+## ✏️ Customization
 
-To learn more about Next.js, take a look at the following resources:
+All portfolio content lives in **`src/data/portfolio.ts`**. Edit this single file to update:
+- Personal info & bio
+- Social links
+- Tech stack
+- Projects
+- Experience
+- Education
+- Certifications & achievements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Color System (Aurora)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Token | Dark Mode | Light Mode |
+|-------|-----------|------------|
+| Base | `#0A0F1E` | `#F8F9FC` |
+| Accent Cyan | `#00D4FF` | `#00B4D8` |
+| Accent Violet | `#7C3AED` | `#7C3AED` |
+| Text | `#F0F2F8` | `#0A0F1E` |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ♥ by Mrittick Deb
