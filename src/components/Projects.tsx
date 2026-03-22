@@ -331,7 +331,7 @@ export default function Projects() {
                                         borderRadius: 10,
                                         overflow: "hidden",
                                         border: "1px solid var(--border-color)",
-                                        maxHeight: 160,
+                                        maxHeight: i < 2 ? 320 : 160,
                                     }}
                                 >
                                     <img
@@ -339,9 +339,9 @@ export default function Projects() {
                                         alt={project.title}
                                         style={{
                                             width: "100%",
-                                            height: 160,
+                                            height: i < 2 ? 320 : 160,
                                             objectFit: "cover",
-                                            objectPosition: "top",
+                                            objectPosition: i < 2 ? "center" : "top",
                                             display: "block",
                                             transition: "transform 0.4s ease",
                                         }}
