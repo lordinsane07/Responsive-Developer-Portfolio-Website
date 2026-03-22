@@ -17,8 +17,7 @@ export const personalInfo = {
   bio: `I’m a Computer Science engineer focused on building production-grade, real-time software systems that integrate intelligent machine learning workflows. My work spans full-stack platforms, distributed architectures, and applied AI — from agentic RAG research systems to real-time collaborative interview simulators and offline-first mobile applications.\n\nI specialize in designing scalable backend infrastructures, low-latency event systems, and end-to-end product experiences that move from research ideas to deployed software. Alongside core engineering, I work with machine learning and data science to build practical AI features such as semantic retrieval, fairness-aware evaluation, and NLP-driven analysis.\n\nOutside product building, I sharpen problem-solving through competitive programming and deepen security thinking through hands-on offensive learning platforms.`,
   location: "Siliguri, West Bengal, India",
   email: "debmrittick@gmail.com",
-  resumeUrl:
-    "https://drive.google.com/file/d/14Mr6sFW8rnsxGJ51o1X_Uyu1xd5Hvx_2/view?usp=drive_link",
+  resumeUrl: "/cv/SPECIALIZEDCVMRITTICK.pdf",
 };
 
 export const socialLinks = [

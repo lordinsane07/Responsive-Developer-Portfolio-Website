@@ -198,6 +198,7 @@ export default function Navbar() {
                             href={personalInfo.resumeUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            download="Mrittick_Deb_CV.pdf"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="btn-primary desktop-nav"
@@ -282,6 +283,7 @@ export default function Navbar() {
                             href={personalInfo.resumeUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            download="Mrittick_Deb_CV.pdf"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: navLinks.length * 0.08 }}

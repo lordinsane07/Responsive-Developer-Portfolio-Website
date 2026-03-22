@@ -399,6 +399,7 @@ export default function Contact() {
                             href={personalInfo.resumeUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            download="Mrittick_Deb_CV.pdf"
                             whileHover={{ scale: 1.02 }}
                             className="btn-outline"
                             style={{
