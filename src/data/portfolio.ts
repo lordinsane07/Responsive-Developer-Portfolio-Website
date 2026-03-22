@@ -14,7 +14,7 @@ export const personalInfo = {
     "Open Source Contributor",
     "Competitive Programmer",
   ],
-  bio: `I'm a Computer Science student at Lovely Professional University who builds end-to-end products — from pixel-perfect mobile apps to intelligent ML systems. I'm driven by the intersection of clean engineering and real-world impact, whether that's detecting student depression risk with fairness-aware models or shipping production-grade web platforms. When I'm not coding, I'm competing on LeetCode/Codeforces or breaking into systems on TryHackMe.`,
+  bio: `I’m a Computer Science engineer focused on building production-grade, real-time software systems that integrate intelligent machine learning workflows. My work spans full-stack platforms, distributed architectures, and applied AI — from agentic RAG research systems to real-time collaborative interview simulators and offline-first mobile applications.\n\nI specialize in designing scalable backend infrastructures, low-latency event systems, and end-to-end product experiences that move from research ideas to deployed software. Alongside core engineering, I work with machine learning and data science to build practical AI features such as semantic retrieval, fairness-aware evaluation, and NLP-driven analysis.\n\nOutside product building, I sharpen problem-solving through competitive programming and deepen security thinking through hands-on offensive learning platforms.`,
   location: "Siliguri, West Bengal, India",
   email: "debmrittick@gmail.com",
   resumeUrl:

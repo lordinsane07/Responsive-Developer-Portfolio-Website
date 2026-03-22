@@ -182,7 +182,7 @@ export default function Hero() {
                         lineHeight: 1.7,
                     }}
                 >
-                    Building end-to-end products — from pixel-perfect apps to intelligent ML systems.
+                    Designing distributed software systems and AI-driven products with production-grade performance.
                 </motion.p>
 
                 {/* Social Icons */}

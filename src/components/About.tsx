@@ -204,6 +204,7 @@ export default function About() {
                                 color: "var(--text-secondary)",
                                 lineHeight: 1.85,
                                 marginBottom: "2rem",
+                                whiteSpace: "pre-wrap",
                             }}
                         >
                             {personalInfo.bio}
