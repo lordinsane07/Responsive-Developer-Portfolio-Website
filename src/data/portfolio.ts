@@ -107,7 +107,7 @@ export const skillCategories: SkillCategory[] = [
   {
     category: "Frontend",
     skills: [
-      { name: "React.js" },
+      { name: "React.js 18" },
       { name: "Next.js" },
       { name: "Tailwind CSS" },
     ],
@@ -115,14 +115,22 @@ export const skillCategories: SkillCategory[] = [
   {
     category: "Backend",
     skills: [
-      { name: "Node.js" },
+      { name: "Node.js 18+" },
       { name: "Express.js" },
-      { name: "Socket.io" },
+      { name: "Redis" },
+      { name: "WebRTC" },
     ],
   },
   {
     category: "Mobile",
-    skills: [{ name: "Flutter" }],
+    skills: [
+      { name: "Flutter 3.13+" },
+      { name: "Bloc" },
+      { name: "Riverpod" },
+      { name: "Hive" },
+      { name: "SQLite/SQLCipher" },
+      { name: "FCM" },
+    ],
   },
   {
     category: "ML / Data Science",
@@ -147,14 +155,32 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    category: "Real-Time & APIs",
+    skills: [
+      { name: "Socket.io" },
+      { name: "WebSocket" },
+      { name: "RESTful API" },
+      { name: "JWT" },
+      { name: "OAuth 2.0" },
+      { name: "OpenAI API" },
+      { name: "Cloudinary API" },
+      { name: "Brevo SMTP" },
+    ],
+  },
+  {
     category: "Tools & DevOps",
     skills: [
       { name: "Docker" },
+      { name: "Docker Compose" },
+      { name: "GitHub Actions CI/CD" },
+      { name: "Nginx" },
+      { name: "AWS EC2" },
       { name: "Git" },
       { name: "Postman" },
       { name: "Power BI" },
       { name: "Jupyter Notebook" },
       { name: "Cloudinary" },
+      { name: "Linux" },
     ],
   },
 ];
@@ -340,6 +366,8 @@ export interface Certification {
   title: string;
   issuer: string;
   date: string;
+  url: string;
+  image: string;
 }
 
 export const certifications: Certification[] = [
@@ -347,26 +375,36 @@ export const certifications: Certification[] = [
     title: "AI Foundations Associate",
     issuer: "Oracle Cloud Infrastructure",
     date: "Oct 2025",
+    url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=49B6784C05EFEFA38FE0F5D4DBFE232903EF915B2B03F97E54E0338BEC39C500",
+    image: "/certs/ai-foundations.jpg",
   },
   {
     title: "Cloud Data Platform",
     issuer: "Oracle",
-    date: "2025",
+    date: "Feb 2026",
+    url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=496BED4757E365C007848BEF14BBA592A8CC9240FE35578A96D0E70AF359D998",
+    image: "/certs/cloud-data-platform.jpg",
   },
   {
     title: "Cloud Computing",
     issuer: "NPTEL, IIT Kharagpur",
     date: "May 2025",
+    url: "https://drive.google.com/file/d/1f5QGbEuuKE8jHdmWyzmEMidhn_qaLmPP/view?usp=drive_link",
+    image: "/certs/cloud-computing.jpg",
   },
   {
-    title: "Computer Architecture",
-    issuer: "Princeton University",
+    title: "Digital Systems: From Logic Gates to Processors",
+    issuer: "Universitat Autònoma de Barcelona",
     date: "Oct 2024",
+    url: "https://coursera.org/share/17cafb1810c3ddaffeafa7d9f16b85a0",
+    image: "/certs/digital-systems.jpg",
   },
   {
     title: "Computer Communications Specialization",
     issuer: "University of Colorado",
     date: "Oct 2024",
+    url: "https://www.coursera.org/account/accomplishments/specialization/BUDCDN1K66Y9?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n",
+    image: "/certs/computer-communications.jpg",
   },
 ];
 

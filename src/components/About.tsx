@@ -148,18 +148,16 @@ export default function About() {
                                     overflow: "hidden",
                                 }}
                             >
-                                {/* Stylized Initials */}
-                                <div
+                                {/* Profile Photo */}
+                                <img
+                                    src="/profile.jpeg"
+                                    alt={personalInfo.name}
                                     style={{
-                                        fontSize: "5rem",
-                                        fontFamily: "Syne, sans-serif",
-                                        fontWeight: 800,
-                                        lineHeight: 1,
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "cover",
                                     }}
-                                    className="text-gradient"
-                                >
-                                    MD
-                                </div>
+                                />
                             </div>
 
                             {/* Decorative elements */}

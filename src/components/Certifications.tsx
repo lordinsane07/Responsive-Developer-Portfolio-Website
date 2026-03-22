@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Award, Shield, GitBranch, GraduationCap, Calendar, type LucideIcon } from "lucide-react";
+import { Award, Shield, GitBranch, GraduationCap, Calendar, ExternalLink, type LucideIcon } from "lucide-react";
 import { certifications, achievements, education } from "@/data/portfolio";
 
 const achievementIcons: Record<string, LucideIcon> = {
@@ -248,10 +248,11 @@ export default function Certifications() {
                         display: "grid",
                         gridTemplateColumns: "repeat(5, 1fr)",
                         gap: "1rem",
+                        alignItems: "stretch",
                     }}
                     className="certifications-grid"
                 >
-                    {certifications.map((cert, i) => (
+                {certifications.map((cert, i) => (
                         <motion.div
                             key={cert.title}
                             initial={{ opacity: 0, y: 20 }}
@@ -265,46 +266,142 @@ export default function Certifications() {
                                 background: "var(--bg-card)",
                                 border: "1px solid var(--border-color)",
                                 borderRadius: 14,
-                                padding: "1.25rem 1.5rem",
+                                padding: 0,
                                 display: "flex",
-                                alignItems: "center",
-                                gap: "1rem",
+                                flexDirection: "column",
+                                overflow: "hidden",
                                 transition: "all 0.3s ease",
                             }}
                         >
+                            {/* Certificate Image */}
                             <div
                                 style={{
-                                    width: 40,
-                                    height: 40,
-                                    borderRadius: 10,
-                                    background: "var(--accent-violet-glow)",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    color: "var(--accent-violet)",
-                                    flexShrink: 0,
+                                    width: "100%",
+                                    height: 140,
+                                    overflow: "hidden",
+                                    position: "relative",
+                                    background: "rgba(255,255,255,0.03)",
                                 }}
                             >
-                                <Award size={20} />
+                                <img
+                                    src={cert.image}
+                                    alt={`${cert.title} certificate`}
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "cover",
+                                        objectPosition: "top center",
+                                        opacity: 0.85,
+                                        transition: "opacity 0.3s ease, transform 0.3s ease",
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.opacity = "1";
+                                        e.currentTarget.style.transform = "scale(1.05)";
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.opacity = "0.85";
+                                        e.currentTarget.style.transform = "scale(1)";
+                                    }}
+                                    onError={(e) => {
+                                        e.currentTarget.style.display = "none";
+                                    }}
+                                />
+                                {/* Gradient overlay */}
+                                <div
+                                    style={{
+                                        position: "absolute",
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        height: 40,
+                                        background: "linear-gradient(transparent, var(--bg-card))",
+                                        pointerEvents: "none",
+                                    }}
+                                />
                             </div>
-                            <div>
-                                <h4
+
+                            {/* Card Content */}
+                            <div style={{ padding: "1rem 1.25rem 1.25rem", flex: 1, display: "flex", flexDirection: "column" }}>
+                                <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "0.75rem" }}>
+                                    <div
+                                        style={{
+                                            width: 36,
+                                            height: 36,
+                                            borderRadius: 9,
+                                            background: "var(--accent-violet-glow)",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            color: "var(--accent-violet)",
+                                            flexShrink: 0,
+                                        }}
+                                    >
+                                        <Award size={18} />
+                                    </div>
+                                    <div style={{ flex: 1 }}>
+                                        <h4
+                                            style={{
+                                                fontSize: "0.88rem",
+                                                fontWeight: 700,
+                                                marginBottom: "0.15rem",
+                                                lineHeight: 1.3,
+                                                minHeight: "2.6em",
+                                                display: "flex",
+                                                alignItems: "flex-start",
+                                            }}
+                                        >
+                                            {cert.title}
+                                        </h4>
+                                        <p
+                                            style={{
+                                                fontSize: "0.75rem",
+                                                color: "var(--text-tertiary)",
+                                                minHeight: "1.5em",
+                                            }}
+                                        >
+                                            {cert.issuer} • {cert.date}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* View Button */}
+                                <a
+                                    href={cert.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="cert-view-btn"
                                     style={{
-                                        fontSize: "0.92rem",
-                                        fontWeight: 700,
-                                        marginBottom: "0.15rem",
-                                    }}
-                                >
-                                    {cert.title}
-                                </h4>
-                                <p
-                                    style={{
+                                        display: "inline-flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        gap: "0.4rem",
+                                        marginTop: "auto",
+                                        padding: "0.5rem 1rem",
+                                        borderRadius: 8,
                                         fontSize: "0.78rem",
-                                        color: "var(--text-tertiary)",
+                                        fontWeight: 600,
+                                        color: "var(--accent-cyan)",
+                                        border: "1px solid var(--accent-cyan)",
+                                        background: "transparent",
+                                        textDecoration: "none",
+                                        transition: "all 0.3s ease",
+                                        cursor: "pointer",
+                                        letterSpacing: "0.02em",
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.background = "var(--accent-cyan)";
+                                        e.currentTarget.style.color = "#0a0f1c";
+                                        e.currentTarget.style.boxShadow = "0 0 20px var(--accent-cyan-glow)";
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.background = "transparent";
+                                        e.currentTarget.style.color = "var(--accent-cyan)";
+                                        e.currentTarget.style.boxShadow = "none";
                                     }}
                                 >
-                                    {cert.issuer} • {cert.date}
-                                </p>
+                                    <ExternalLink size={14} />
+                                    View Certificate
+                                </a>
                             </div>
                         </motion.div>
                     ))}
