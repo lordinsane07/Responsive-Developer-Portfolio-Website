@@ -18,7 +18,7 @@ export const personalInfo = {
   location: "Siliguri, West Bengal, India",
   email: "debmrittick@gmail.com",
   resumeUrl:
-    "https://drive.google.com/file/d/1zss7QU4uxqynbeSOz-x40Z-YB_jAfyTD/view?usp=drive_link",
+    "https://drive.google.com/file/d/14Mr6sFW8rnsxGJ51o1X_Uyu1xd5Hvx_2/view?usp=drive_link",
 };
 
 export const socialLinks = [
@@ -76,8 +76,8 @@ export const socialLinks = [
 ];
 
 export const stats = [
-  { label: "Projects Built", value: 7, suffix: "+" },
-  { label: "LeetCode Rank", value: 25, suffix: "%", prefix: "Top " },
+  { label: "Projects Built", value: 8, suffix: "+" },
+  { label: "LeetCode Contests", value: 25, suffix: "%", prefix: "Top " },
   { label: "TryHackMe", value: 7, suffix: "%", prefix: "Top " },
   { label: "CGPA", value: 8.05, suffix: "/10", decimals: 2 },
 ];
@@ -223,27 +223,134 @@ export interface Project {
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
+  downloadUrl?: string;
+  image?: string;
   featured: boolean;
 }
 
 export const projects: Project[] = [
   {
-    title: "AI-Powered Leave Management System",
+    title: "AI-Powered Leave Management — Multi-Tenant RBAC Workflow Engine",
     description:
-      "Production-grade full-stack platform with role-based workflows, real-time notifications, JWT auth, OTP verification via Brevo API, and Cloudinary asset management.",
+      "Created React dashboard with role-based views (Admin/Manager/Employee), form validation, and live status notifications. Built Node.js REST API with JWT + RBAC middleware, Cloudinary file uploads, and AES-256 encrypted storage. Architected Socket.io real-time alerts with <500ms delivery, Redis offline queuing, and Brevo SMTP email fallback.",
     techStack: [
       "React.js",
       "Node.js",
-      "Express.js",
       "MongoDB",
       "Socket.io",
-      "JWT",
+      "Redis",
+      "PostgreSQL",
       "Cloudinary",
-      "Brevo API",
+      "Docker",
     ],
-    githubUrl: "https://github.com/lordinsane07/QUICK-CHAT",
+    githubUrl: "https://github.com/mrittickdeb",
     liveUrl: "https://leave-manager-mu.vercel.app/dashboard",
+    image: "/projects/leavemanager.png",
     featured: true,
+  },
+  {
+    title: "ResearchGPT — Agentic RAG System for Large-Scale Research Synthesis",
+    description:
+      "Developed React.js frontend with agentic query UI, streaming LLM responses, and markdown-rendered citation cards. Constructed Node.js REST API with RAG pipeline, OpenAI embeddings, MongoDB vector store, and JWT auth. Deployed via Docker + Nginx with Redis semantic cache achieving <3s end-to-end latency.",
+    techStack: [
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "Redis",
+      "OpenAI API",
+      "LangChain",
+      "Docker",
+      "Nginx",
+    ],
+    githubUrl: "https://github.com/lordinsane07/ResearchGPT",
+    liveUrl: "https://researchgpt-demo.vercel.app",
+    image: "/projects/researchgpt.png",
+    featured: true,
+  },
+  {
+    title: "PrepSync — Real-Time Technical Interview Simulation Platform",
+    description:
+      "Architected AI interview simulation platform with WebRTC peer rooms, collaborative editor, and Socket.io event bus. Built Node.js backend with Yjs CRDT sync, Redis pub/sub, LiveKit SFU, and JWT-secured REST API. Deployed Groq Llama 3.3 70B pipeline generating 6-dimension scored reports in <10s with async summariser.",
+    techStack: [
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "Socket.io",
+      "WebRTC",
+      "LiveKit",
+      "Yjs CRDT",
+      "Redis",
+      "Docker",
+    ],
+    githubUrl: "https://github.com/lordinsane07/PrepSync",
+    liveUrl: "https://prepsync-demo.vercel.app",
+    image: "/projects/prepsync.png",
+    featured: true,
+  },
+  {
+    title: "Deliberate — Debate Platform with Real-Time Fallacy Detection",
+    description:
+      "Developed Flutter UI with threaded debate feeds, argument cards, live fallacy badges, and animated cooldown indicators. Launched Node.js WebSocket backend with NLP fallacy detection (ad hominem, straw man) reducing incidence by 40%. Implemented Riverpod state management with optimistic UI updates and offline-aware sync via Redis queue on AWS EC2.",
+    techStack: [
+      "Flutter 3.13+",
+      "Dart 3.0+",
+      "Node.js",
+      "MongoDB",
+      "WebSocket",
+      "Redis",
+      "Riverpod",
+      "AWS EC2",
+    ],
+    githubUrl: "https://github.com/lordinsane07/DeliberateApp",
+    downloadUrl: "https://github.com/lordinsane07/DeliberateApp",
+    image: "/projects/deliberate.png",
+    featured: false,
+  },
+  {
+    title: "Offline-First Task Manager — Conflict-Free Sync with Bloc",
+    description:
+      "Assembled Flutter UI with Bloc-driven task boards, priority filters, offline badge indicators, and FCM push notifications. Configured Node.js REST API with PostgreSQL row versioning, JWT auth, and ETag-based optimistic concurrency control. Established SQLCipher local DB with conflict-free sync achieving 99.9% convergence within 5s post-reconnect.",
+    techStack: [
+      "Flutter 3.13+",
+      "Dart 3.0+",
+      "Bloc",
+      "Node.js",
+      "PostgreSQL",
+      "SQLite/SQLCipher",
+      "Docker",
+      "FCM",
+    ],
+    githubUrl: "https://github.com/lordinsane07/Offline-First-Task-Manager",
+    downloadUrl: "https://github.com/lordinsane07/Offline-First-Task-Manager",
+    image: "/projects/taskmanager.png",
+    featured: false,
+  },
+  {
+    title: "FinFlow — Personal Finance Tracker",
+    description:
+      "Bloomberg-meets-Revolut fintech dashboard with real-time transaction tracking, Recharts visualizations, Firebase auth, and seamless dark/light mode.",
+    techStack: [
+      "React 18",
+      "Vite",
+      "Tailwind CSS",
+      "Firebase",
+      "Recharts",
+      "Lucide React",
+    ],
+    githubUrl: "https://github.com/lordinsane07/FINFLOW",
+    liveUrl: "https://finflow-cyan.vercel.app/",
+    image: "/projects/expensetracker.png",
+    featured: false,
+  },
+  {
+    title: "Lumina — Smart Study Planner",
+    description:
+      "Privacy-focused academic planner with schedule conflict detection, progress analytics, and a unique hand-crafted journal aesthetic — zero dependencies, runs entirely in the browser.",
+    techStack: ["Vanilla JavaScript", "HTML5", "CSS3", "LocalStorage"],
+    githubUrl: "https://github.com/lordinsane07/Lumina-SmartStudyPlanner",
+    liveUrl: "https://lumina-study-planner.vercel.app/",
+    image: "/projects/lumina.png",
+    featured: false,
   },
   {
     title: "Student Depression Risk Prediction",
@@ -262,94 +369,7 @@ export const projects: Project[] = [
       "https://github.com/lordinsane07/STUDENT-DEPRESSION-PREDICTION-MODEL",
     liveUrl:
       "https://student-depression-prediction-model-mrittickdeb.streamlit.app/",
-    featured: true,
-  },
-  {
-    title: "FinFlow — Personal Finance Tracker",
-    description:
-      "Bloomberg-meets-Revolut fintech dashboard with real-time transaction tracking, Recharts visualizations, Firebase auth, and seamless dark/light mode.",
-    techStack: [
-      "React 18",
-      "Vite",
-      "Tailwind CSS",
-      "Firebase",
-      "Recharts",
-      "Lucide React",
-    ],
-    githubUrl: "https://github.com/lordinsane07/FINFLOW",
-    liveUrl: "https://finflow-cyan.vercel.app/",
-    featured: true,
-  },
-  {
-    title: "Lumina — Smart Study Planner",
-    description:
-      "Privacy-focused academic planner with schedule conflict detection, progress analytics, and a unique hand-crafted journal aesthetic — zero dependencies, runs entirely in the browser.",
-    techStack: ["Vanilla JavaScript", "HTML5", "CSS3", "LocalStorage"],
-    githubUrl: "https://github.com/lordinsane07/Lumina-SmartStudyPlanner",
-    liveUrl: "https://lumina-study-planner.vercel.app/",
-    featured: true,
-  },
-  {
-    title: "ForkFindr — Food Discovery App",
-    description:
-      "Full MERN stack food ordering platform with restaurant discovery, curated listings, filters, and secure JWT authentication.",
-    techStack: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JWT",
-      "bcrypt",
-    ],
-    githubUrl:
-      "https://github.com/lordinsane07/FORKFINDR-Discover-Dine-Delight",
-    featured: false,
-  },
-  {
-    title: "Car Price Prediction System",
-    description:
-      "End-to-end ML pipeline on 400,000+ vehicle records with EDA, XGBoost achieving 99% R², Streamlit web deployment, and an interactive Power BI executive dashboard.",
-    techStack: [
-      "Python",
-      "XGBoost",
-      "Streamlit",
-      "Power BI",
-      "Pandas",
-      "Seaborn",
-      "Matplotlib",
-    ],
-    githubUrl:
-      "https://github.com/lordinsane07/CAR-PREDICTION-MODEL-STREAMLIT",
-    liveUrl: "https://car-prediction-model-app-mrittick.streamlit.app/",
-    featured: false,
-  },
-  {
-    title: "Deliberate — Slow Conversation Platform",
-    description:
-      "A Flutter-built anti-impulsive debate platform with intentional reply cooldowns, structured stance tracking, AI-powered argument summarization, and moderation.",
-    techStack: [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "Firebase Auth",
-      "Cloud Firestore",
-      "Go Router",
-    ],
-    githubUrl: "https://github.com/lordinsane07/Deliberate",
-    featured: false,
-  },
-  {
-    title: "Anomaly Detection Pipeline",
-    description:
-      "Unsupervised deep learning pipeline using TensorFlow autoencoders to detect rare abnormal patterns in unlabeled data via reconstruction error scoring — with calibrated thresholds benchmarked against baseline methods.",
-    techStack: [
-      "Python",
-      "TensorFlow",
-      "Keras",
-      "Scikit-Learn",
-      "Pandas",
-      "NumPy",
-    ],
+    image: "/projects/studentdepression.jpg",
     featured: false,
   },
 ];

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Download } from "lucide-react";
 import { projects } from "@/data/portfolio";
 
 export default function Projects() {
@@ -95,7 +95,7 @@ export default function Projects() {
                                 overflow: "hidden",
                                 cursor: "pointer",
                                 transition: "all 0.4s cubic-bezier(0.23, 1, 0.32, 1)",
-                                gridColumn: i === 0 || i === featured.length - 1 ? "span 2" : "span 1",
+                                gridColumn: i === 0 ? "span 2" : "span 1",
                             }}
                             className="project-card"
                             onMouseEnter={(e) => {
@@ -118,13 +118,15 @@ export default function Projects() {
                                     right: 16,
                                     padding: "0.25rem 0.75rem",
                                     borderRadius: 20,
-                                    background: "var(--accent-cyan-glow)",
+                                    background: "rgba(0, 0, 0, 0.7)",
+                                    backdropFilter: "blur(8px)",
                                     border: "1px solid var(--accent-cyan)",
                                     fontSize: "0.7rem",
                                     color: "var(--accent-cyan)",
                                     fontWeight: 700,
                                     textTransform: "uppercase",
                                     letterSpacing: "0.08em",
+                                    zIndex: 10,
                                 }}
                             >
                                 Featured
@@ -147,6 +149,34 @@ export default function Projects() {
                                     pointerEvents: "none",
                                 }}
                             />
+
+                            {/* Project Image */}
+                            {project.image && (
+                                <div
+                                    style={{
+                                        marginBottom: "1.25rem",
+                                        borderRadius: 12,
+                                        overflow: "hidden",
+                                        border: "1px solid var(--border-color)",
+                                        maxHeight: 320,
+                                    }}
+                                >
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        style={{
+                                            width: "100%",
+                                            height: 320,
+                                            objectFit: "cover",
+                                            objectPosition: "top",
+                                            display: "block",
+                                            transition: "transform 0.4s ease",
+                                        }}
+                                        onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.05)"; }}
+                                        onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+                                    />
+                                </div>
+                            )}
 
                             <h3
                                 style={{
@@ -228,6 +258,20 @@ export default function Projects() {
                                         <ExternalLink size={15} /> Live Demo
                                     </motion.a>
                                 )}
+                                {project.downloadUrl && (
+                                    <motion.a
+                                        href={project.downloadUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="btn-primary"
+                                        onClick={(e) => e.stopPropagation()}
+                                        style={{ fontSize: "0.82rem", padding: "0.55rem 1rem" }}
+                                    >
+                                        <Download size={15} /> Download APK
+                                    </motion.a>
+                                )}
                             </div>
                         </motion.div>
                     ))}
@@ -237,7 +281,7 @@ export default function Projects() {
                 <div
                     style={{
                         display: "grid",
-                        gridTemplateColumns: "repeat(4, 1fr)",
+                        gridTemplateColumns: "repeat(6, 1fr)",
                         gap: "1.25rem",
                     }}
                     className="projects-regular"
@@ -263,6 +307,9 @@ export default function Projects() {
                                 position: "relative",
                                 overflow: "hidden",
                                 transition: "all 0.4s cubic-bezier(0.23, 1, 0.32, 1)",
+                                gridColumn: i < 2 ? "span 3" : "span 2",
+                                display: "flex",
+                                flexDirection: "column" as const,
                             }}
                             onMouseEnter={(e) => {
                                 const el = e.currentTarget;
@@ -276,6 +323,34 @@ export default function Projects() {
                                 el.style.boxShadow = "none";
                             }}
                         >
+                            {/* Project Image */}
+                            {project.image && (
+                                <div
+                                    style={{
+                                        marginBottom: "0.75rem",
+                                        borderRadius: 10,
+                                        overflow: "hidden",
+                                        border: "1px solid var(--border-color)",
+                                        maxHeight: 160,
+                                    }}
+                                >
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        style={{
+                                            width: "100%",
+                                            height: 160,
+                                            objectFit: "cover",
+                                            objectPosition: "top",
+                                            display: "block",
+                                            transition: "transform 0.4s ease",
+                                        }}
+                                        onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.05)"; }}
+                                        onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+                                    />
+                                </div>
+                            )}
+
                             <h3
                                 style={{
                                     fontSize: "1.15rem",
@@ -306,7 +381,7 @@ export default function Projects() {
                                     marginBottom: "1.25rem",
                                 }}
                             >
-                                {project.techStack.slice(0, 4).map((tech) => (
+                                {project.techStack.map((tech) => (
                                     <span
                                         key={tech}
                                         style={{
@@ -321,22 +396,9 @@ export default function Projects() {
                                         {tech}
                                     </span>
                                 ))}
-                                {project.techStack.length > 4 && (
-                                    <span
-                                        style={{
-                                            padding: "0.25rem 0.6rem",
-                                            borderRadius: 6,
-                                            fontSize: "0.68rem",
-                                            color: "var(--text-muted)",
-                                            fontWeight: 500,
-                                        }}
-                                    >
-                                        +{project.techStack.length - 4}
-                                    </span>
-                                )}
                             </div>
 
-                            <div style={{ display: "flex", gap: "0.5rem" }}>
+                            <div style={{ display: "flex", gap: "0.5rem", marginTop: "auto" }}>
                                 {project.githubUrl && (
                                     <motion.a
                                         href={project.githubUrl}
@@ -347,7 +409,7 @@ export default function Projects() {
                                         className="btn-outline"
                                         style={{ fontSize: "0.78rem", padding: "0.45rem 0.85rem" }}
                                     >
-                                        <Github size={14} /> Code
+                                        <Github size={14} /> GitHub
                                     </motion.a>
                                 )}
                                 {project.liveUrl && (
@@ -360,13 +422,65 @@ export default function Projects() {
                                         className="btn-primary"
                                         style={{ fontSize: "0.78rem", padding: "0.45rem 0.85rem" }}
                                     >
-                                        <ExternalLink size={14} /> Demo
+                                        <ExternalLink size={14} /> Live Demo
+                                    </motion.a>
+                                )}
+                                {project.downloadUrl && (
+                                    <motion.a
+                                        href={project.downloadUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="btn-primary"
+                                        style={{ fontSize: "0.78rem", padding: "0.45rem 0.85rem" }}
+                                    >
+                                        <Download size={14} /> APK
                                     </motion.a>
                                 )}
                             </div>
                         </motion.div>
                     ))}
                 </div>
+
+                {/* See All Projects */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 1 }}
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        marginTop: "2.5rem",
+                    }}
+                >
+                    <motion.a
+                        href="https://github.com/lordinsane07"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05, boxShadow: "0 0 30px var(--accent-cyan-glow), 0 0 60px rgba(0,0,0,0.3)" }}
+                        whileTap={{ scale: 0.95 }}
+                        style={{
+                            fontSize: "1rem",
+                            padding: "0.85rem 2.5rem",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "0.6rem",
+                            borderRadius: 12,
+                            border: "1px solid var(--accent-cyan)",
+                            background: "linear-gradient(135deg, var(--accent-cyan-glow), rgba(139, 92, 246, 0.1))",
+                            color: "var(--accent-cyan)",
+                            fontWeight: 700,
+                            fontFamily: "Syne, sans-serif",
+                            letterSpacing: "0.03em",
+                            cursor: "pointer",
+                            transition: "all 0.3s ease",
+                            textDecoration: "none",
+                        }}
+                    >
+                        <Github size={20} /> See All Projects
+                    </motion.a>
+                </motion.div>
             </div>
 
             <style jsx global>{`
@@ -380,10 +494,16 @@ export default function Projects() {
           .projects-regular {
             grid-template-columns: 1fr 1fr !important;
           }
+          .projects-regular > * {
+            grid-column: span 1 !important;
+          }
         }
         @media (max-width: 640px) {
           .projects-regular {
             grid-template-columns: 1fr !important;
+          }
+          .projects-regular > * {
+            grid-column: span 1 !important;
           }
         }
       `}</style>
