@@ -242,7 +242,7 @@ export const projects: Project[] = [
       "Cloudinary",
       "Docker",
     ],
-    githubUrl: "https://github.com/mrittickdeb",
+    githubUrl: "https://github.com/lordinsane07/Leave-Manager",
     liveUrl: "https://leave-manager-mu.vercel.app/dashboard",
     image: "/projects/leavemanager.png",
     featured: true,
