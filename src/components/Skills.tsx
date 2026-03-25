@@ -22,8 +22,6 @@ import {
     SiTensorflow,
     SiPytorch,
     SiScikitlearn,
-    SiPandas,
-    SiNumpy,
     SiMongodb,
     SiPostgresql,
     SiMysql,
@@ -43,8 +41,13 @@ import {
     SiOpenai,
     SiGithubactions,
     SiAmazonec2,
+    SiSupabase,
+    SiHuggingface,
 } from "react-icons/si";
-import { TbBrain, TbChartBar, TbApi, TbBrandOauth, TbMail, TbPlug, TbWebhook, TbBell } from "react-icons/tb";
+import { 
+    TbBrain, TbChartBar, TbApi, TbBrandOauth, TbMail, TbPlug, TbWebhook, TbBell,
+    TbBolt, TbCode, TbVideo, TbLink, TbHierarchy, TbDatabaseSearch, TbRobot
+} from "react-icons/tb";
 
 // Map skill names to icons
 const skillIconMap: Record<string, React.ReactNode> = {
@@ -53,6 +56,7 @@ const skillIconMap: Record<string, React.ReactNode> = {
     "TypeScript": <SiTypescript size={20} />,
     "Python": <SiPython size={20} />,
     "Dart": <SiDart size={20} />,
+    "Dart 3.0+": <SiDart size={20} />,
     "C": <SiC size={20} />,
     "React.js 18": <SiReact size={20} />,
     "Next.js": <SiNextdotjs size={20} />,
@@ -70,12 +74,11 @@ const skillIconMap: Record<string, React.ReactNode> = {
     "TensorFlow": <SiTensorflow size={20} />,
     "PyTorch": <SiPytorch size={20} />,
     "Scikit-Learn": <SiScikitlearn size={20} />,
-    "Pandas": <SiPandas size={20} />,
-    "NumPy": <SiNumpy size={20} />,
     "MongoDB": <SiMongodb size={20} />,
     "PostgreSQL": <SiPostgresql size={20} />,
     "MySQL": <SiMysql size={20} />,
     "Firebase": <SiFirebase size={20} />,
+    "Supabase": <SiSupabase size={20} />,
     "Socket.io": <SiSocketdotio size={20} />,
     "WebSocket": <TbWebhook size={20} />,
     "RESTful API": <TbApi size={20} />,
@@ -84,6 +87,11 @@ const skillIconMap: Record<string, React.ReactNode> = {
     "OpenAI API": <SiOpenai size={20} />,
     "Cloudinary API": <SiCloudinary size={20} />,
     "Brevo SMTP": <TbMail size={20} />,
+    "Groq": <TbBolt size={20} />,
+    "RapidAPI": <TbApi size={20} />,
+    "Judge0": <TbCode size={20} />,
+    "LiveKit": <TbVideo size={20} />,
+    "Resend": <TbMail size={20} />,
     "Docker": <SiDocker size={20} />,
     "Docker Compose": <SiDocker size={20} />,
     "GitHub Actions CI/CD": <SiGithubactions size={20} />,
@@ -94,10 +102,13 @@ const skillIconMap: Record<string, React.ReactNode> = {
     "Jupyter Notebook": <SiJupyter size={20} />,
     "Cloudinary": <SiCloudinary size={20} />,
     "Linux": <SiLinux size={20} />,
-    "XGBoost": <TbBrain size={20} />,
-    "SHAP": <TbBrain size={20} />,
-    "SMOTE": <TbBrain size={20} />,
     "Power BI": <TbChartBar size={20} />,
+    "LangChain": <TbLink size={20} />,
+    "LangGraph": <TbHierarchy size={20} />,
+    "LLM Orchestration": <TbRobot size={20} />,
+    "Agentic AI": <TbRobot size={20} />,
+    "RAG Pipelines": <TbDatabaseSearch size={20} />,
+    "HuggingFace": <SiHuggingface size={20} />,
 };
 
 export default function Skills() {
